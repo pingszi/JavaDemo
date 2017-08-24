@@ -1,0 +1,1 @@
+参考：深入理解java虚拟机（第二版）->2.4实战：OutOfMemoryError异常
