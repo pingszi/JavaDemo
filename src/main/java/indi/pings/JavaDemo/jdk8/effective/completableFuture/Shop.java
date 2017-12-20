@@ -14,7 +14,23 @@ import java.util.concurrent.Future;
  */
 public class Shop {
 	
-	Random random = new Random();
+	static Random random = new Random();
+	
+	private String name;
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public Shop() {}
+
+	public Shop(String name) {
+		this.name = name;
+	}
 
 	/**模拟延迟*/
 	public static void delay() {
@@ -52,5 +68,22 @@ public class Shop {
 		
 		//**无需等待还没结束的计算，直接返回Future对象
 		return futurePrice;
+	}
+	
+	/**查询产品价格，返回产品名称+价格+折扣，同步版本*/
+	public String getPrice2(String product) {
+		double price = calculatePrice(product);
+		Discount.Code code = Discount.Code.values()[random.nextInt(Discount.Code.values().length)];
+		return String.format("%s:%.2f:%s", name, price, code);
+	}
+	
+	/**模拟延500-2500毫秒延时*/
+	public static void randomDelay() {
+		int delay = 500 + random.nextInt(2000);
+		try {
+			Thread.sleep(delay);
+		} catch (InterruptedException e) {
+			throw new RuntimeException(e);
+		}
 	}
 }
