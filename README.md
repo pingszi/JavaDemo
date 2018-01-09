@@ -9,3 +9,5 @@ java各种基础知识测试、实践和示例
 2017-12-07 java8 Optional类<br/>
 2017-12-13 java8 completableFuture<br/>
 2017-12-20 java8 新的时间和日期API<br/>
+2018-01-04 java8 函数式编程<br/>
+2017-01-08 java8 其它的更新<br/>
