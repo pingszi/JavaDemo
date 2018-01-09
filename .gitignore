@@ -1,1 +1,4 @@
-/target/
+target/
+.settings
+.idea
+JavaDemo.iml

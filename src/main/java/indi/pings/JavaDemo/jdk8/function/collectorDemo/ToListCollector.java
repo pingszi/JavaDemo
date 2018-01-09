@@ -79,6 +79,7 @@ public class ToListCollector<T> implements Collector<T, List<T>, List<T>> {
 		//**2.自带toList
 		System.out.println(Dish.menu.stream().map(Dish::getName).collect(toList()));
 		//**3.自定义收集
-		System.out.println(Dish.menu.stream().collect(ArrayList::new, List::add, List::addAll));
+		List<Dish> dishes = Dish.menu.stream().collect(ArrayList::new, List::add, List::addAll);
+		System.out.println(dishes);
 	}
 }
