@@ -21,6 +21,25 @@ public class MyCollections {
 
         var map = Map.of("key1", "value1", "key2", "value2");
         System.out.println(Map.copyOf(map));
+
+        Test test = new Test();
+        var list1 = List.of(new Test(), new Test());
+        var newList1 = List.copyOf(list1);
+        System.out.println(newList1);
+
+        list1.get(0).name = "pings";
+        list1.get(1).name = "pings1";
+        System.out.println(list1);
+        System.out.println(newList1);
+    }
+
+    private static class Test {
+        private String name;
+
+        @Override
+        public String toString() {
+            return "Test{ name='" + name + '}';
+        }
     }
 
     public static void main(String[] args) {
